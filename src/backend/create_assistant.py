@@ -45,7 +45,8 @@ def create_assistant(name: str, instructions: str, tools: list, file_ids: list) 
     for assistant in my_assistants.data:
         if assistant.name == name:
             return assistant
-
+    print("EHRERHERHEHR")
+    print(open_ai_deployment_name)
     return client.beta.assistants.create(
         name=name,
         instructions=instructions,

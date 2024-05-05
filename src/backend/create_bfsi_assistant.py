@@ -31,7 +31,10 @@ def create_app_assistant() -> any:
         instructions = instructions.replace(filename, assistant_files[filename])
 
     logging.info(instructions)
-
+    print(f"assistant_name: {assistant_name} \n")
+    print(f"instructions: {instructions} \n")
+    print(f"tools_list: {tools_list} \n")
+    print(f"file_ids: {file_ids} \n")
     app_assistant = create_assistant(assistant_name, instructions, tools_list, file_ids)
     assistant_id = app_assistant.id
 

@@ -54,7 +54,7 @@ def get_index(name: str) -> SearchIndex:
             name="Category_Subcategory_Vector",
             type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
             searchable=True,
-            vector_search_dimensions=3072,
+            vector_search_dimensions=1536,
             vector_search_profile_name="my-vector-config",
         ),
     ]
@@ -87,7 +87,7 @@ def get_index(name: str) -> SearchIndex:
 
 
 def get_intent_documents() -> list:
-    file_path = "get_intent_data.json"
+    file_path = "./bfsi_config/tools/get_intent_data.json"
     with Path(file_path).open("r") as file:
         intent_data = json.load(file)
     docs = []
